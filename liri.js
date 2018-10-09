@@ -32,7 +32,7 @@ for (var i=3; i<nodeArgv.length; i++){
   }
 }
 
-//switch case
+//switch case ISSUE with line 39???????
 switch(command){
   case "concert-this":
     if(x){

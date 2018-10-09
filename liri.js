@@ -5,17 +5,17 @@
 // var spotify = require('spotify');
 // var fs = require('fs');
 require('dotenv').config();
-let Spotify = require('node-spotify-api');
-let request = require('request');
-let moment = require('moment');
-let fs = require('fs');
-let keys = require('./keys');
+var Spotify = require('node-spotify-api');
+var request = require('request');
+var moment = require('moment');
+var fs = require('fs');
+var keys = require('./keys');
 
 
-let spotify = new Spotify(keys.spotify);
-let omdbUrl = 'http://www.omdbapi.com/?apikey=trilogy&t=';
-let bandsUrlBase = 'https://rest.bandsintown.com/artists/';
-let bandsUrlEnd = '/events?app_id=codingbootcamp';
+var spotify = new Spotify(keys.spotify);
+var omdbUrl = 'http://www.omdbapi.com/?apikey=trilogy&t=';
+var bandsUrlBase = 'https://rest.bandsintown.com/artists/';
+var bandsUrlEnd = '/events?app_id=codingbootcamp';
 
 
 //Stored argument's array
@@ -32,7 +32,7 @@ for (var i=3; i<nodeArgv.length; i++){
   }
 }
 
-//switch case ISSUE with line 39???????
+//switch case....ISSUE with line 39???????
 switch(command){
   case "concert-this":
     if(x){
@@ -113,16 +113,16 @@ function omdbData(movie){
       console.log("Rotten Tomatoes Rating: " + body.tomatoRating);
       console.log("Rotten Tomatoes URL: " + body.tomatoURL);
 
-      //adds text to log.txt
-      fs.appendFile('log.txt', "Title: " + body.Title);
-      fs.appendFile('log.txt', "Release Year: " + body.Year);
-      fs.appendFile('log.txt', "IMdB Rating: " + body.imdbRating);
-      fs.appendFile('log.txt', "Country: " + body.Country);
-      fs.appendFile('log.txt', "Language: " + body.Language);
-      fs.appendFile('log.txt', "Plot: " + body.Plot);
-      fs.appendFile('log.txt', "Actors: " + body.Actors);
-      fs.appendFile('log.txt', "Rotten Tomatoes Rating: " + body.tomatoRating);
-      fs.appendFile('log.txt', "Rotten Tomatoes URL: " + body.tomatoURL);
+    //   //adds text to log.txt
+    //   fs.appendFile('log.txt', "Title: " + body.Title);
+    //   fs.appendFile('log.txt', "Release Year: " + body.Year);
+    //   fs.appendFile('log.txt', "IMdB Rating: " + body.imdbRating);
+    //   fs.appendFile('log.txt', "Country: " + body.Country);
+    //   fs.appendFile('log.txt', "Language: " + body.Language);
+    //   fs.appendFile('log.txt', "Plot: " + body.Plot);
+    //   fs.appendFile('log.txt', "Actors: " + body.Actors);
+    //   fs.appendFile('log.txt', "Rotten Tomatoes Rating: " + body.tomatoRating);
+    //   fs.appendFile('log.txt', "Rotten Tomatoes URL: " + body.tomatoURL);
 
     } else{
       console.log('Error occurred.')

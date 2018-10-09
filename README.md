@@ -4,7 +4,7 @@
 
 LIRI uses the following NPM Packages and API's:
 
-- <a href="http://www.artists.bandsintown.com/bandsintown-api" rel="link">Bands in Town</a>
+- <a href="https://www.npmjs.com/package/bandsintown" rel="link">Bands in Town</a>
 - <a href="https://www.npmjs.com/package/spotify" rel="link">Spotify API</a>
 - <a href="https://www.npmjs.com/package/request" rel="nofollow">Request</a>
 - <a href="https://www.npmjs.com/package/moment" rel="link"> Moment</a>
@@ -27,14 +27,14 @@ In the command line, you would type: node liri.js and any of the four following 
 - do-what-it-says
   
   ### What Each Command Should Do
-1. `node liri.js concert-this <artist/band name here>`
+1. `node liri.js concert-this "<artist/band name here>"`
 
 	* This will search the Bands in Town API for an artist and returns: 
 		* Name of Venue
 		* Location 
 		* Date of Concert
 
-2. `node liri.js spotify-this-song '<song name here>'`
+2. `node liri.js spotify-this-song <"song name here">`
 
 	* This will show the following information about the song in your terminal/bash window
 		* Artist(s)

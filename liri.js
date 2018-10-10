@@ -50,11 +50,7 @@ break;
   break;
 
   case "movie-this":
-    if(x){
-      omdbData(x)
-    } else{
-      omdbData("Mr. Nobody")
-    }
+    omdbData(process.argv[3])
   break;
 
   case "do-what-it-says":
@@ -66,7 +62,13 @@ break;
   break;
 }
 
-
+function appendNewSearch (prompt){
+    fs.appendFile('log.txt', prompt, function(error) {
+      if (error) {
+        return console.log(error)
+      }
+    });
+  }
 
 function spotifySong(song){
   spotify.search({ type: 'track', query: song}, function(error, data){
@@ -83,12 +85,12 @@ function spotifySong(song){
         console.log("Album: " + songData.album.name);
         console.log("-----------------------");
         
-        //adds text to log.txt
-        fs.appendFile('log.txt', songData.artists[0].name);
-        fs.appendFile('log.txt', songData.name);
-        fs.appendFile('log.txt', songData.preview_url);
-        fs.appendFile('log.txt', songData.album.name);
-        fs.appendFile('log.txt', "-----------------------");
+        // //adds text to log.txt
+        // fs.appendFile('log.txt', songData.artists[0].name);
+        // fs.appendFile('log.txt', songData.name);
+        // fs.appendFile('log.txt', songData.preview_url);
+        // fs.appendFile('log.txt', songData.album.name);
+        // fs.appendFile('log.txt', "-----------------------");
       }
     } else{
       console.log('Error occurred.');
@@ -97,8 +99,19 @@ function spotifySong(song){
 }
 
 function omdbData(movie){
-  var omdbURL = 'http://www.omdbapi.com/?t=' + movie + '&plot=short&tomatoes=true';
+  
+  if(!movie){
+    movie = "Mr. Nobody";
+    console.log(movie)
+    console.log("-----------------------");
+    console.log("If you haven't watched 'Mr. Nobody,' then you should: http://www.imdb.com/title/tt0485947/");
+    console.log("It's on Netflix!");
+  }
 
+  var searchValue = movie;
+  
+  var omdbURL = 'http://www.omdbapi.com/?apikey=trilogy&t=' + searchValue + '&y=&plot=short&r=json&tomatoes=true';
+  
   request(omdbURL, function (error, response, body){
     if(!error && response.statusCode == 200){
       var body = JSON.parse(body);
@@ -112,32 +125,35 @@ function omdbData(movie){
       console.log("Actors: " + body.Actors);
       console.log("Rotten Tomatoes Rating: " + body.tomatoRating);
       console.log("Rotten Tomatoes URL: " + body.tomatoURL);
-
-    //   //adds text to log.txt
-    //   fs.appendFile('log.txt', "Title: " + body.Title);
-    //   fs.appendFile('log.txt', "Release Year: " + body.Year);
-    //   fs.appendFile('log.txt', "IMdB Rating: " + body.imdbRating);
-    //   fs.appendFile('log.txt', "Country: " + body.Country);
-    //   fs.appendFile('log.txt', "Language: " + body.Language);
-    //   fs.appendFile('log.txt', "Plot: " + body.Plot);
-    //   fs.appendFile('log.txt', "Actors: " + body.Actors);
-    //   fs.appendFile('log.txt', "Rotten Tomatoes Rating: " + body.tomatoRating);
-    //   fs.appendFile('log.txt', "Rotten Tomatoes URL: " + body.tomatoURL);
+      
+      //adds text to log.txt
+    appendNewSearch(movie + ", ");
 
     } else{
-      console.log('Error occurred.')
-    }
-    if(movie === "Mr. Nobody"){
-      console.log("-----------------------");
-      console.log("If you haven't watched 'Mr. Nobody,' then you should: http://www.imdb.com/title/tt0485947/");
-      console.log("It's on Netflix!");
+    console.log('Error occurred: ' + error);
+  }
+});
+
+
 
       //adds text to log.txt
-      fs.appendFile('log.txt', "-----------------------");
-      fs.appendFile('log.txt', "If you haven't watched 'Mr. Nobody,' then you should: http://www.imdb.com/title/tt0485947/");
-      fs.appendFile('log.txt', "It's on Netflix!");
-    }
-  });
+      fs.appendFile('log.txt', "Title: " + body.Title);
+      fs.appendFile('log.txt', "Release Year: " + body.Year);
+      fs.appendFile('log.txt', "IMdB Rating: " + body.imdbRating);
+      fs.appendFile('log.txt', "Country: " + body.Country);
+      fs.appendFile('log.txt', "Language: " + body.Language);
+      fs.appendFile('log.txt', "Plot: " + body.Plot);
+      fs.appendFile('log.txt', "Actors: " + body.Actors);
+      fs.appendFile('log.txt', "Rotten Tomatoes Rating: " + body.tomatoRating);
+      fs.appendFile('log.txt', "Rotten Tomatoes URL: " + body.tomatoURL);
+    
+    // } else{
+      //   console.log('Error occurred.')
+      // }
+    //   //adds text to log.txt
+    //   fs.appendFile('log.txt', "-----------------------");
+    //   fs.appendFile('log.txt', "If you haven't watched 'Mr. Nobody,' then you should: http://www.imdb.com/title/tt0485947/");
+    //   fs.appendFile('log.txt', "It's on Netflix!");
 
 }
 

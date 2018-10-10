@@ -33,6 +33,7 @@ In the command line, you would type: node liri.js and any of the four following 
 		* Name of Venue
 		* Location 
 		* Date of Concert
+		
 
 2. `node liri.js spotify-this-song <"song name here">`
 
@@ -66,6 +67,28 @@ In the command line, you would type: node liri.js and any of the four following 
 4. `node liri.js do-what-it-says`
 	* Using the `fs` Node package, LIRI will take the text inside of random.txt and then use it to call one of LIRI's commands.
 		* It should run `spotify-this-song` for "I Want it That Way," as follows the text in `random.txt`.
+### Screenshots of Code (Working and Not Working examples)
+
+* Example for spotify-this-song 'Piano Man' (Working)
+
+![Spotify This Song Screenshot](/assets/images/Spotify-this-song.png)
+
+* Example for movie-this (Working)'
+
+![Movie This Screenshot](/assets/images/Movie-this.png)
+
+* Example for movie-this with no text entered (Working)
+
+![Movie This Default Screenshot](/assets/images/Movie-this-default.png)
+
+* Example for do-what-it-says (Working)
+
+![Do What it Says Screenshot](/assets/images/Do-what-it-says.png)
+
+![Spotify This Song Default Screenshot](/assets/images/Spotify-this-song-default.png)
+
+### Link to Video Walkthrough of Liri Bot
+* to be added soon!
 
 ### Copyright
 Mark Piscioneri 2018. All Rights Reserved

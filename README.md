@@ -4,7 +4,7 @@
 
 LIRI uses the following NPM Packages and API's:
 
-- <a href="https://www.npmjs.com/package/bandsintown" rel="link">Bands in Town</a>
+- <a href="https://www.npmjs.com/package/mhs-bandsintown" rel="link">Bands in Town</a>
 - <a href="https://www.npmjs.com/package/spotify" rel="link">Spotify API</a>
 - <a href="https://www.npmjs.com/package/request" rel="nofollow">Request</a>
 - <a href="https://www.npmjs.com/package/moment" rel="link"> Moment</a>

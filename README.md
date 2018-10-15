@@ -67,13 +67,17 @@ In the command line, you would type: node liri.js and any of the four following 
 4. `node liri.js do-what-it-says`
 	* Using the `fs` Node package, LIRI will take the text inside of random.txt and then use it to call one of LIRI's commands.
 		* It should run `spotify-this-song` for "I Want it That Way," as follows the text in `random.txt`.
-### Screenshots of Code (Working and Not Working examples)
+### Screenshots of Code (Working examples)
 
 * Example for spotify-this-song 'Piano Man' (Working)
 
 ![Spotify This Song Screenshot](/assets/images/Spotify-this-song.png)
 
-* Example for movie-this (Working)'
+* Example for concert-this (Working)
+
+![Concert This Artist SCreenshot](/assets/images/concert-this.png)
+
+* Example for movie-this (Working)
 
 ![Movie This Screenshot](/assets/images/Movie-this.png)
 
@@ -84,6 +88,8 @@ In the command line, you would type: node liri.js and any of the four following 
 * Example for do-what-it-says (Working)
 
 ![Do What it Says Screenshot](/assets/images/Do-what-it-says.png)
+
+* Example for Spotify-this-song-default (Working)
 
 ![Spotify This Song Default Screenshot](/assets/images/Spotify-this-song-default.png)
 

@@ -75,7 +75,7 @@ In the command line, you would type: node liri.js and any of the four following 
 
 * Example for concert-this (Working)
 
-![Concert This Artist SCreenshot](/assets/images/concert-this.png)
+![Concert This Artist Screenshot](/assets/images/Concert-this.png)
 
 * Example for movie-this (Working)
 
